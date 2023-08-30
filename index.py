@@ -12,7 +12,6 @@ Version 0.9b
 import sys
 import time
 import os
-
 from termcolor import cprint
 import Read_Hospital_Excel_Sheet
 import Write_Hospital_Excel_Sheet
@@ -37,8 +36,8 @@ def exit_screen():
     print("\033c", end="")
     cprint("Attention! Too many attempt", "red", attrs=["bold"], file=sys.stderr)    
     for i in range(total_iterations):
-        time.sleep(0.7)
-        progress = (i + 1) * 20
+        time.sleep(0.3)
+        progress = (i + 1) * 10
         print("\033c", end="")
         print(f"[{'=' * i}{' ' * (total_iterations - i - 1)}] {progress}%")
 
@@ -51,6 +50,13 @@ def AppointmentIndexInDoctorsDataBase (patient_ID) :
 				Appointment_index = Doctors_DataBase[i].index(j)
 				return Appointment_index,i
 loading_screen()	
+cprint("\n                                                   || WELCOME TO ||                             ", "red", attrs=["bold"], file=sys.stderr)
+cprint("                                            Hospital Management System Project                       ", "red", attrs=["bold"], file=sys.stderr)
+cprint("\n Name: Vanshika Sharma", "yellow", attrs=["bold"], file=sys.stderr)
+cprint("\n Roll: ", "yellow", attrs=["bold"], file=sys.stderr)
+cprint("\n Sec: A", "yellow", attrs=["bold"], file=sys.stderr)
+cprint("\n School Name: RSKV, West Vinod Nagar, Delhi", "yellow", attrs=["bold"], file=sys.stderr)
+cprint("\n Teacher Name: Monika", "yellow", attrs=["bold"], file=sys.stderr)
 #print(" _______________________________________________________________________________________________________________________________________")
 #print("|                                                  || WELCOME TO ||                                                                     |")
 #print("|                        _ _        _                                                            _     __           _                   |")
