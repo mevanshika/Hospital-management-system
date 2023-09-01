@@ -4,7 +4,6 @@ Hospital Management System Project
 Author: Vanshika Sharma
 Roll No: 1
 Sec: A
-School Name: RSKV, West Vinod Nagar, Delhi
 File: Read_Hospital_Excel_Sheet.py
 Version 0.9b
 -----------------------------------------------------------

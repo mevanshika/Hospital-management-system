@@ -2,9 +2,7 @@
 ------------------------------------------------------
 Hospital Management System Project
 Author: Vanshika Sharma
-Roll No: 
 Sec: A
-School Name: RSKV, West Vinod Nagar, Delhi
 File: index.py
 Version 0.9b
 -----------------------------------------------------------
@@ -12,6 +10,7 @@ Version 0.9b
 import sys
 import time
 import os
+
 from termcolor import cprint
 import Read_Hospital_Excel_Sheet
 import Write_Hospital_Excel_Sheet
@@ -22,7 +21,7 @@ def loading_screen():
     print("\033c", end="")
     print("Initializing...")
     for i in range(total_iterations):
-        time.sleep(0.2)
+        time.sleep(0.5)
         progress = (i + 1) * 10
         print("\033c", end="")
         print(f"[{'=' * i}{' ' * (total_iterations - i - 1)}] {progress}%")
@@ -36,8 +35,8 @@ def exit_screen():
     print("\033c", end="")
     cprint("Attention! Too many attempt", "red", attrs=["bold"], file=sys.stderr)    
     for i in range(total_iterations):
-        time.sleep(0.3)
-        progress = (i + 1) * 10
+        time.sleep(0.7)
+        progress = (i + 1) * 20
         print("\033c", end="")
         print(f"[{'=' * i}{' ' * (total_iterations - i - 1)}] {progress}%")
 
@@ -49,23 +48,16 @@ def AppointmentIndexInDoctorsDataBase (patient_ID) :
 			if str(patient_ID) == str(j[0]) :
 				Appointment_index = Doctors_DataBase[i].index(j)
 				return Appointment_index,i
-loading_screen()	
-cprint("\n                                                   || WELCOME TO ||                             ", "red", attrs=["bold"], file=sys.stderr)
-cprint("                                            Hospital Management System Project                       ", "red", attrs=["bold"], file=sys.stderr)
-cprint("\n Name: Vanshika Sharma", "yellow", attrs=["bold"], file=sys.stderr)
-cprint("\n Roll: ", "yellow", attrs=["bold"], file=sys.stderr)
-cprint("\n Sec: A", "yellow", attrs=["bold"], file=sys.stderr)
-cprint("\n School Name: RSKV, West Vinod Nagar, Delhi", "yellow", attrs=["bold"], file=sys.stderr)
-cprint("\n Teacher Name: Monika", "yellow", attrs=["bold"], file=sys.stderr)
-#print(" _______________________________________________________________________________________________________________________________________")
-#print("|                                                  || WELCOME TO ||                                                                     |")
-#print("|                        _ _        _                                                            _     __           _                   |")
-#print("|   /\  /\___  ___ _ __ (_) |_ __ _| |   /\/\   __ _ _ __   __ _  __ _  ___ _ __ ___   ___ _ __ | |_  / _\_   _ ___| |_ ___ _ __ ___    |")           
-#print("|  / /_/ / _ \/ __| '_ \| | __/ _` | |  /    \ / _` | '_ \ / _` |/ _` |/ _ \ '_ ` _ \ / _ \ '_ \| __| \ \| | | / __| __/ _ \ '_ ` _ \   |")
-#print("| / __  / (_) \__ \ |_) | | || (_| | | / /\/\ \ (_| | | | | (_| | (_| |  __/ | | | | |  __/ | | | |_  _\ \ |_| \__ \ ||  __/ | | | | |  |")
-#print("| \/ /_/ \___/|___/ .__/|_|\__\__,_|_| \/    \/\__,_|_| |_|\__,_|\__, |\___|_| |_| |_|\___|_| |_|\__| \__/\__, |___/\__\___|_| |_| |_|  |")
-#print("|                  |_|                                            |___/                                    |___/                        |")
-#print("|_______________________________________________________________________________________________________________________________________|")
+#loading_screen()	
+print(" _______________________________________________________________________________________________________________________________________")
+print("|                                                  || WELCOME TO ||                                                                     |")
+print("|                        _ _        _                                                            _     __           _                   |")
+print("|   /\  /\___  ___ _ __ (_) |_ __ _| |   /\/\   __ _ _ __   __ _  __ _  ___ _ __ ___   ___ _ __ | |_  / _\_   _ ___| |_ ___ _ __ ___    |")           
+print("|  / /_/ / _ \/ __| '_ \| | __/ _` | |  /    \ / _` | '_ \ / _` |/ _` |/ _ \ '_ ` _ \ / _ \ '_ \| __| \ \| | | / __| __/ _ \ '_ ` _ \   |")
+print("| / __  / (_) \__ \ |_) | | || (_| | | / /\/\ \ (_| | | | | (_| | (_| |  __/ | | | | |  __/ | | | |_  _\ \ |_| \__ \ ||  __/ | | | | |  |")
+print("| \/ /_/ \___/|___/ .__/|_|\__\__,_|_| \/    \/\__,_|_| |_|\__,_|\__, |\___|_| |_| |_|\___|_| |_|\__| \__/\__, |___/\__\___|_| |_| |_|  |")
+print("|                  |_|                                            |___/                                    |___/                        |")
+print("|_______________________________________________________________________________________________________________________________________|")
 	
 
 tries = 0
@@ -111,7 +103,7 @@ while tries_flag != "Close the program" :
 								cprint("\nEnter your choice", "magenta", attrs=["underline"], file=sys.stderr)
 								Admin_choice = input (":=> ")
 								Admin_choice = Admin_choice.upper()
-								#loading_screen()
+								loading_screen()
 								if Admin_choice == "1" : 										
 											try :		
 												os.system('cls')
